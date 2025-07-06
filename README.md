@@ -1,3 +1,2 @@
-# sentiment-analysis
-# Buradaki veri setiyle metin işleme yaparak. Gelen yorumdan o yorumdaki genel duygu tutumunu tahmin eden modeli geliştirelim. 
-# 1. fark => Sınıflandırma => 27 farklı duygu türü
+Let's develop a model that predicts the general emotional attitude in a comment by performing text processing with the data set here.
+# 1st difference => Classification => 27 different types of emotions
