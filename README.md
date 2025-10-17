@@ -175,3 +175,8 @@ Validation Strategy: Used stratified or temporal splits to prevent data leakage 
 | **Multi-Label**  | >1           | Multi-output  | Binary Cross-Entropy  | Macro/Micro-F1  | Binary Relevance, Sigmoid NN (final output layer for multi-label tasks.)   |
 
 
+| Concept                        | Role                    | Why It’s Used                                                     |
+| ------------------------------ | ----------------------- | ----------------------------------------------------------------- |
+| **Binary Cross-Entropy (BCE)** | Loss function           | Measures how well each emotion probability matches the true label |
+| **Binary Relevance**           | Training strategy       | Treats each emotion as a separate binary problem                  |
+| **Sigmoid NN**                 | Output layer activation | Allows multiple emotions to be predicted at once                  |
