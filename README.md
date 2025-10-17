@@ -33,7 +33,7 @@ After cleaning and exploring the data, the next step is to **train and evaluate 
 **Script:** `analyze_data.py`
 
 ### What it does
-- Loads all `goemotions_*.csv` files  
+- Loads all `goemotions_*.csv` files.Merges 3 CSV files (`goemotions_1/2/3.csv`)
 - Reads emotion names from `emotions.txt`  
 - Prints:
   - Total number of samples  
