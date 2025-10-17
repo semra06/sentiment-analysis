@@ -66,4 +66,11 @@ Example: emotion label (e.g., joy or anger, but not both).
 | "I love my job"        | 1   | 0     | 0       | ... |
 | "He ruined everything" | 0   | 1     | 0       | ... |
 
+MODELS: 
+Logistic Regression
 
+SVM (Support Vector Machine)
+
+LightGBM / XGBoost
+
+Neural networks (MLP, BERT fine-tune, etc.)
