@@ -47,7 +47,7 @@ Module: clean_text.py
 
 This module provides a comprehensive cleaning pipeline to prepare GoEmotions for training.
 
-🧽 Text Normalization
+**🧽 Text Normalization**
 
 Lowercase conversion
 
@@ -55,7 +55,7 @@ Punctuation removal
 
 Extra whitespace removal
 
-🧩 Row Filtering
+**🧩 Row Filtering**
 
 Remove unclear examples (example_very_unclear == True)
 
@@ -65,8 +65,8 @@ Optionally remove multi-label rows (for single-label setups)
 
 Remove rows with no labels
 
-🏷️ Label Index Creation
-
+**🏷️ Label Index Creation
+**
 Adds a labels column containing the index of the first active emotion — required for single-label classification.
 
 🧪 3) Next Steps — Modeling
@@ -74,7 +74,7 @@ Adds a labels column containing the index of the first active emotion — requir
 After cleaning, the dataset is ready for modeling.
 You can choose between single-label or multi-label setups.
 
-🔹 Single-Label Classification
+**🔹 Single-Label Classification**
 
 Each text expresses only one emotion (e.g., joy or anger, not both).
 
@@ -84,8 +84,8 @@ Each text expresses only one emotion (e.g., joy or anger, not both).
 | "He ruined everything" | 0   | 1     | 0       | ... |
 
 
-Recommended Models
-
+**Recommended Models
+**
 Logistic Regression
 
 SVM (Support Vector Machine)
@@ -129,6 +129,8 @@ Macro-F1: averages each label equally
 
 Micro-F1: aggregates all predictions (better for imbalance)
 
+
+
 Data Splitting
 
 Use stratified or time-based splits depending on your data. train and test
@@ -142,11 +144,11 @@ summary:
 | **Single-Label** | 1               | Multi-class  | Cross-Entropy        | Accuracy, F1   | Logistic Regression, SVM, LightGBM, BERT |
 | **Multi-Label**  | >1              | Multi-output | Binary Cross-Entropy | Macro/Micro-F1 | Binary Relevance, LightGBM, Sigmoid NN   |
 
-feature engineering and model selection after understanding the data?
+**feature engineering and model selection after understanding the data**
 
 **Data Understanding: Explored dataset size, label frequencies, correlations, and text distributions.
 **
-Feature Engineering:
+**Feature Engineering:**
 
 Cleaned text (lowercase, punctuation removal).
 
@@ -154,14 +156,22 @@ Encoded text with TF-IDF and embeddings for richer representations.
 
 Transformed multi-hot emotion labels for modeling.
 
-Model Selection:
+**Model Selection:**
 
-For single-label, compared interpretable baselines (Logistic Regression, SVM) vs. boosted models (LightGBM).
+For single-label -> **LightGBM model was chosen for this project.-> It can handle categorical and numeric variables together, which is suitable for text vectors + sentiment features.
+**
+Accuracy,Precision,Recall, Macro-F1 score (recommended for label instability),Micro-F1 score -> recommended if label instability exists
 
-For multi-label, used binary cross-entropy and tracked macro/micro-F1.
+**For multi-label,** used binary cross-entropy and tracked macro/micro-F1.
 
 Evaluated transformer fine-tuning (BERT) for contextual performance.
 
 Validation Strategy: Used stratified or temporal splits to prevent data leakage and ensure robust generalization.
+
+**Summary**
+| Structure        | Label Count | Model Type   | Loss Function         | Metrics        | Recommended Model              |
+| ---------------- | ------------ | ------------- | --------------------- | --------------- | ------------------------------- |
+| **Single-Label** | 1            | Multi-class   | Cross-Entropy         | Accuracy, F1    | **LightGBM**                    |
+| **Multi-Label**  | >1           | Multi-output  | Binary Cross-Entropy  | Macro/Micro-F1  | Binary Relevance, Sigmoid NN (final output layer for multi-label tasks.)   |
 
 
