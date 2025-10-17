@@ -39,7 +39,7 @@ After cleaning and exploring the data, the next step is to **train and evaluate 
   - Total number of samples  
   - Per-emotion sample counts  
   - Text length statistics  
-- Creates and saves a **correlation heatmap** (`emotion_correlation_heatmap.png`) showing relationships among emotions.
+**- Creates and saves a **correlation heatmap** (`emotion_correlation_heatmap.png`) showing relationships among emotions.**
 
 🧹 2) Data Cleaning Pipeline
 
